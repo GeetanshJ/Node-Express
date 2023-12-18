@@ -1,6 +1,7 @@
 var exp = require('express');
 var app = exp();
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 app.use(exp.static('BEE'));
 
@@ -39,7 +40,7 @@ app.post('/signupSubmit',function(req,res){
    
    console.log(ename);
    console.log(add1);
-   console.log(add2);
+   console.log(add2);7
    console.log(dob);
    console.log(deptid);
    console.log(sal);
