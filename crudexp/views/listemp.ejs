@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style = "width:1200px;margin: 0 auto;background-color: aqua;color:white;">
+        <table align="center" borer = "1" cellspacing="5">
+            <tr>
+                <td>Emp id</td>
+                <td>Name</td>
+                <td>Salary</td>
+                <td>Action</td>
+            </tr>
+            <tr>
+                <td><% for(int i = 0;i < result.length; i++){%></td>
+                <td><%= result[i].empid%></td>
+                <td><%= result[i].ename%></td>
+                <td><%= result[i].salary%></td>
+                <td><a href = "/editemp">Edit</a><a href = "/editemp">Delete</a></td>
+            </tr>
+            <%}%>
+        </table>
+
+    </div>
+
+</body>
+</html>
