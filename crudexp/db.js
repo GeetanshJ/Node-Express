@@ -8,7 +8,7 @@ var con = mysql.createConnection({
 
 con.connect(function(err){
     if(err){
-        console,log("throw");
+        console.log("throw");
     }
 
     console.log("connected");

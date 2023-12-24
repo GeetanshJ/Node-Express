@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/addemp_submit" method="post">
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="ename" value="<%= result.ename %>"></td>
+            </tr>
+
+            <tr>
+                <td>Address 1</td>
+                <td><input type="text" name="add1" value="<%= result.add1 %>"></td>
+            </tr>
+
+            <tr>
+                <td>Address 2</td>
+                <td><input type="text" name="add2" value="<%= result.add2 %>"></td>
+            </tr>
+
+            <tr>
+                <td>DOB</td>
+                <td><input type="date" name="dob" value="<%= result.dob %>"></td>
+            </tr>
+
+            <tr>
+                <td>DOJ</td>
+                <td><input type="date" name="doj" value="<%= result.doj %>"></td>
+            </tr>
+
+            <tr>
+                <td>Salary</td>
+                <td><input type="number" name="salary" value="<%= result.salary %>"></td>
+            </tr>
+
+            <tr>
+                <td>Department</td>
+                <td>
+                    <select name="deptid">
+                        <% for(let i = 0; i < result.length; i++){ %>
+                            <option value="<%= result[i].deptid %>"><%= result[i].dname %></option>
+                        <% } %>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
