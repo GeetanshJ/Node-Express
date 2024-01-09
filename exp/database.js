@@ -6,7 +6,6 @@ var con = mysql.createConnection({
     password:"password",
     database:"class_bee"
 });
-
 con.connect(function(err){
     if(err){
         console,log(err);

@@ -7,8 +7,6 @@ var con = require('./database.js');
 app.use(exp.static('BEE'));
 
 app.use(bodyParser.urlencoded({ extended: true }));
-
-
 app.get('/', function (req, res) {
     res.send("<h1>Hello welcome to my site</h1>");
 })
