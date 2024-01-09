@@ -10,7 +10,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get("/", (req, res) => {
-    res.render("home", { login : "login" });
+    res.render("home", { login : "login",hello:"hi please login to continue"});
 });
 
 
@@ -20,14 +20,15 @@ app.get("/login", (req, res) => {
 });
 
 app.post("/login_submit", (req, res) => {
-    var { email, password } = req.body;
-    let sql = `SELECT * FROM users WHERE email=? AND password=?`;
+    var {email, password } = req.body;
+    let sql = `SELECT * FROM users WHERE  email=? AND password=?`;
 
     db.query(sql, [email, password], (err, results) => {
 
         if (results.length > 0) {
             req.session.user_id = results[0].user_id;
-            res.render('home',{login:"logout"});
+            req.session.username = results[0].username;
+            res.render('home',{login:"logout",hello:`welcome mr ${req.session.username }`});
         }
         
         else {
